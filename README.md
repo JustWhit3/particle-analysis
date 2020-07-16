@@ -1,4 +1,4 @@
-# Useful Informations (Work in Progress)
+# Useful Informations 
 
 ## General Informations
 This project has been created in 2016-2017 with my collegue Marco Collesei, for the exam "Laboratorio 2" of the bachelor's degree.
