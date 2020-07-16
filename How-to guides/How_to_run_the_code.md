@@ -22,5 +22,5 @@ to open ROOT. Than run the "Main.c" program to generate events:
 
 and than run the "Analisi.c" program to analyze the histograms and get the results:
 
-- `Analisi.c`
+- `.X Analisi.c`
 
