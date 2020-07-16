@@ -44,7 +44,7 @@ This document contains the definition of the `Particle` class and of its methods
 ### Methods
 This class contains only definitions of public methods:
 - `int GetIParticle() const`: to get the particle ID.
-- `double GetPx() const`, `double GetPy() const` and `double GetPz() const`: to set momentum along axis.
+- `double GetPx() const`, `double GetPy() const` and `double GetPz() const`: to get momentum along axis.
 - `double GetMass() const`: to get mass of the particle.
 - `double GetCharge() const`: to get charge of the particle.
 - `double GetEnergy() const`: to get energy of the particle.
