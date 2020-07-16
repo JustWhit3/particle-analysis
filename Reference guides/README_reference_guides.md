@@ -36,7 +36,7 @@ This class contains only definition of private members:
 - `const double fWidth`: that is the width of the particle resonance.
 
 ## ResonanceType.c ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ResonanceType.c))
-This document contain the initialization of the `virtual void Print()` method and of the `ResonanceType` constructor, that construct the proper particle with mass, charge, name and resonance width.ù
+This document contain the initialization of the `virtual void Print()` method and of the `ResonanceType` constructor, that construct the proper particle with mass, charge, name and resonance width.
 
 ## Particle.h ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/Particle.h))
 This document contains the definition of the `Particle` class and of its methods and members. This class contains all the previous ones and has the purpose of being used for the event generations. To do this, it uses methods to create arrays of particles, with their own characteristics, and the way of decaying of particles with resonances.
@@ -74,3 +74,6 @@ This class has three constructors:
 - `Particle()`
 - `Particle (const char *Name, double Px = 0., double Py = 0., double Pz = 0.)`
 - `Particle (int IParticle, double Px = 0., double Py = 0., double Pz = 0.)`
+
+## Particle.c ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/Particle.c))
+This document contains the initialization of the three constructors and of all the methods of the `Particle` class.
