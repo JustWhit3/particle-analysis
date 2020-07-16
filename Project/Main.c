@@ -11,7 +11,9 @@
 #include "TFile.h"
 
 R__LOAD_LIBRARY(ParticleType.c)
+ 
 R__LOAD_LIBRARY(ResonanceType.c)
+ 
 R__LOAD_LIBRARY(Particle.c)
 
 using namespace std;
