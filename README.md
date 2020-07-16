@@ -12,6 +12,6 @@ view. In this, you will not find explicit references to the code or to the techn
 
 - [Project](https://github.com/JustWhit3/Particle-class/tree/master/Project): this folder contains the whole code of the project and some graphs and informations related to the representation of the final results. Quick link to the main program is [here](https://github.com/JustWhit3/Particle-class/blob/master/Project/Main.c), quick link to the analysis program is [here](https://github.com/JustWhit3/Particle-class/blob/master/Project/Analisi.c).
 
-- [Reference Guides](https://github.com/JustWhit3/Particle-classtree/master/Reference%20guides): this folder contains all the reference guides related to understand how work all the functions and classes defined in the project.
+- [Reference Guides](https://github.com/JustWhit3/Particle-class/tree/master/Reference%20guides): this folder contains all the reference guides related to understand how work all the functions and classes defined in the project.
 
 NOTE: for each folder there is a proper README.md file that explains in detail what are the documents inside it and what they do.
