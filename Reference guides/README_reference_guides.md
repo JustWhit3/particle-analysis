@@ -4,7 +4,7 @@
 This folder contains all the informations related to the classes and functions used in the program.
 
 ## ParticleType.h ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ParticleType.h))
-This document contains the definition of the`ResonanceType` class class and of its methods and members. This class has the purpose of create instances that bring with them the three fundamental characteristics of a particle: name, charge and mass.
+This document contains the definition of the`ParticleType` class class and of its methods and members. This class has the purpose of create instances that bring with them the three fundamental characteristics of a particle: name, charge and mass.
 
 ### Methods
 This class contains only definitions of public methods:
