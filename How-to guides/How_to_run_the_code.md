@@ -7,7 +7,7 @@ Click on the button "Code" and than click on "Download ZIP".
 ### 2) Extract the program from the download file
 You need a software like "Winrar" to extract the files from the ZIP document.
 
-Once you've done this, you need to search for the file "Analisi.c", "Main.c", "Particle.c", "Particle.h", "ParticleType.c", "ParticleType.h", "ResonanceType.c" and "ResonanceType.h, into the "Project" and the "Reference guide" folders and move them to your "Home" folder (to make the program easier to run).
+Once you've done this, you need to search for the file "Analisi.c", "Main.c", "Particle.c", "Particle.h", "ParticleType.c", "ParticleType.h", "ResonanceType.c" and "ResonanceType.h", into the "Project" and the "Reference guide" folders and move them to your "Home" folder (to make the program easier to run).
 ### 3) Download ROOT
 To compile the code, you need to download and install the ROOT data analysis framework from [here](https://d35c7d8c.web.cern.ch/downloading-root).
 
