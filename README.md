@@ -1,4 +1,7 @@
 # Useful Informations (Work in Progress)
+
+## General Informations
+This project has been created in 2016-2017 with my collegue Marco Collesei, for the exam "Laboratorio 2" of the bachelor's degree.
  
 ## List of the folders in the repository
 
@@ -10,3 +13,5 @@ view. In this, you will not find explicit references to the code or to the techn
 - [Project](https://github.com/JustWhit3/Particle-class/tree/master/Project): this folder contains the whole code of the project and some graphs and informations related to the representation of the final results. Quick link to the program is [here](https://github.com/JustWhit3/Particle-class/blob/master/Project/Program.ipynb).
 
 - [Reference Guides](https://github.com/JustWhit3/Particle-classtree/master/Reference%20guides): this folder contains all the reference guides related to understand how work all the functions and classes defined in the project.
+
+NOTE: for each folder there is a proper README.md file that explains in detail what are the documents inside it and what they do.
