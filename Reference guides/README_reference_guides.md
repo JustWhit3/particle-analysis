@@ -21,7 +21,7 @@ This class contains only definition of private members:
 - `const int fCharge`: that is the charge of the particle.
 
 ## ParticleType.c ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ParticleType.c))
-This document contain the initialization of the `virtual void Print()` method and of the `ParticleType` constructor, that construct the proper particle with mass, charge and name.
+This document contain the initialization of the `virtual void Print()` method and of the `ParticleType` constructor, that constructs the proper particle with mass, charge and name.
 
 ## ResonanceType.h ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ResonanceType.h))
 This document contains the definition of the `ResonanceType` class and of its methods and members. `ResonanceType` class is heir of the`ResonanceType` one and creates particles with characteristics of the mother class , but also with the resonance width attribute, for particles that have one.
