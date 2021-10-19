@@ -20,7 +20,7 @@ This class contains only definition of private members:
 - `const double fMass`: that is the mass of the particle.
 - `const int fCharge`: that is the charge of the particle.
 
-## ParticleType.c ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ParticleType.c))
+## ParticleType.cpp ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ParticleType.cpp))
 This document contain the initialization of the `virtual void Print()` method and of the `ParticleType` constructor, that constructs the proper particle with mass, charge and name.
 
 ## ResonanceType.h ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ResonanceType.h))
@@ -35,7 +35,7 @@ This class contains only definitions of public methods:
 This class contains only definition of private members:
 - `const double fWidth`: that is the width of the particle resonance.
 
-## ResonanceType.c ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ResonanceType.c))
+## ResonanceType.cpp ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/ResonanceType.cpp))
 This document contain the initialization of the `virtual void Print()` method and of the `ResonanceType` constructor, that construct the proper particle with mass, charge, name and resonance width.
 
 ## Particle.h ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/Particle.h))
@@ -75,5 +75,5 @@ This class has three constructors:
 - `Particle (const char *Name, double Px = 0., double Py = 0., double Pz = 0.)`
 - `Particle (int IParticle, double Px = 0., double Py = 0., double Pz = 0.)`
 
-## Particle.c ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/Particle.c))
+## Particle.cpp ([link](https://github.com/JustWhit3/Particle-class/blob/master/Reference%20guides/Particle.cpp))
 This document contains the initialization of the three constructors and of all the methods of the `Particle` class.
