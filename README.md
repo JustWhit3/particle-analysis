@@ -11,7 +11,7 @@
 
 ## Introduction
 
-This project simulates a particle events generation and analysis by using only simulations and not real data. Its purpose is of teaching bachelor's degree students in physics how a particle analysis works. I have developed this project in 2016-2017 for the exam "[Laboratorio di Elettromagnetismo e Ottica [Modulo 3]](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/434322)" (when I was a noob in programming ;) ). Since in 2021 I became the tutor of this course, I decided to update a bit the repository for teaching purpose only, therefore, this is the motivation for which the final update is at that data. I didn't upgrade technical objects like pointers into vectors and others, I simply upgrade the whole structure of the project (scripts, compilation etc...).
+This project simulates a particle events generation and analysis by using only simulations and not real data. Its purpose is of teaching bachelor's degree students in physics how a particle analysis works. I have developed this project in 2016-2017 for the exam "[Laboratorio di Elettromagnetismo e Ottica [Modulo 3]](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/434322)" at university of Bologna (when I was a noob in programming ;) ). Since in 2021 I became the tutor of this course, I decided to update a bit the repository for teaching purpose only, therefore, this is the motivation for which the final update is at that data. I didn't upgrade technical objects like pointers into vectors and others, I simply upgrade the whole structure of the project (scripts, compilation etc...).
 
 ## Description of the repository
 
