@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
-#include "ParticleType.h"
-#include "ResonanceType.h"
-#include "Particle.h"
+#include "../include/ParticleType.h"
+#include "../include/ResonanceType.h"
+#include "../include/Particle.h"
 #include "TRandom.h"
 #include "TBenchmark.h"
 #include "TH1F.h"
@@ -17,9 +17,9 @@
 double fi (double *x, double *y)
 {return y[0] + x[0] * y[1];}
 
-void Analisi ()
+void Analysis ()
 {
-TFile *file = new TFile("Istogrammi.root");
+TFile *file = new TFile("../histograms.root");
 file->ls();
 
 TH1D * type = (TH1D *)file->Get("TypeP");
@@ -80,48 +80,48 @@ inv_mass_res->GetYaxis()->SetTitle("Counts");
 
 cout <<endl;
 
-double Pione_Positivo = type->GetBinContent(1);
-double Pione_Positivo_Errore = type->GetBinError(1);
-cout << "Pioni+ : " << Pione_Positivo << " +- " << Pione_Positivo_Errore 
-<< " generazioni -> " << (Pione_Positivo*100)/1e7 << "%" << '\n';
-double Pione_Negativo = type->GetBinContent(2);
-double Pione_Negativo_Errore = type->GetBinError(2);
-cout << "Pioni- : " << Pione_Negativo << " +- " << Pione_Negativo_Errore
-<< " generazioni -> " << (Pione_Negativo*100)/1e7 << "%" << '\n';
-double Kaone_Positivo = type->GetBinContent(3);
-double Kaone_Positivo_Errore = type->GetBinError(3);
-cout << "Kaoni+ : " << Kaone_Positivo << " +- " << Kaone_Positivo_Errore
-<< " generazioni -> " << (Kaone_Positivo*100)/1e7 << "%" << '\n';
-double Kaone_Negativo = type->GetBinContent(4);
-double Kaone_Negativo_Errore = type->GetBinError(4);
-cout << "Kaoni- : " << Kaone_Negativo << " +- " << Kaone_Negativo_Errore
-<< " generazioni -> " << (Kaone_Negativo*100)/1e7 << "%" << '\n';
-double Protone_Positivo = type->GetBinContent(5);
-double Protone_Positivo_Errore = type->GetBinError(5);
-cout << "Protoni+ : " << Protone_Positivo << " +- " << Protone_Positivo_Errore
-<< " generazioni -> " << (Protone_Positivo*100)/1e7 << "%" << '\n';
-double Protone_Negativo = type->GetBinContent(6);
-double Protone_Negativo_Errore = type->GetBinError(6);
-cout << "Protoni- : " << Protone_Negativo << " +- " << Protone_Negativo_Errore
-<< " generazioni -> " << (Protone_Negativo*100)/1e7 << "%" << '\n';
-double Risonanza = type->GetBinContent(7);
-double Risonanza_Errore = type->GetBinError(7);
-cout << "K* : " << Risonanza << " +- " << Risonanza_Errore
-<< " generazioni -> " << (Risonanza*100)/1e7 << "%" << '\n';
+double positive_pion = type->GetBinContent(1);
+double positive_pion_error = type->GetBinError(1);
+cout << "Pions+ : " << positive_pion << " +- " << positive_pion_error 
+<< " generations -> " << (positive_pion*100)/1e7 << "%" << '\n';
+double negative_pion = type->GetBinContent(2);
+double negative_pion_error = type->GetBinError(2);
+cout << "Pions- : " << negative_pion << " +- " << negative_pion_error
+<< " generations -> " << (negative_pion*100)/1e7 << "%" << '\n';
+double positive_kaon = type->GetBinContent(3);
+double positive_kaon_error = type->GetBinError(3);
+cout << "Kaons+ : " << positive_kaon << " +- " << positive_kaon_error
+<< " generations -> " << (positive_kaon*100)/1e7 << "%" << '\n';
+double negative_kaon = type->GetBinContent(4);
+double negative_kaon_error = type->GetBinError(4);
+cout << "Kaons- : " << negative_kaon << " +- " << negative_kaon_error
+<< " generations -> " << (negative_kaon*100)/1e7 << "%" << '\n';
+double positive_proton = type->GetBinContent(5);
+double positive_proton_error = type->GetBinError(5);
+cout << "Protons+ : " << positive_proton << " +- " << positive_proton_error
+<< " generations -> " << (positive_proton*100)/1e7 << "%" << '\n';
+double negative_proton = type->GetBinContent(6);
+double negative_proton_error = type->GetBinError(6);
+cout << "Protons- : " << negative_proton << " +- " << negative_proton_error
+<< " generations -> " << (negative_proton*100)/1e7 << "%" << '\n';
+double resonance = type->GetBinContent(7);
+double resonance_error = type->GetBinError(7);
+cout << "K* : " << resonance << " +- " << resonance_error
+<< " generations -> " << (resonance*100)/1e7 << "%" << '\n';
 
 cout << endl;
-double Somma, Errore_Somma;
-Somma = Pione_Positivo + Pione_Negativo + Kaone_Positivo + Kaone_Negativo + Protone_Positivo + Protone_Negativo + Risonanza;
-Errore_Somma = Pione_Positivo_Errore + Pione_Negativo_Errore + Kaone_Positivo_Errore + Kaone_Negativo_Errore +
-Protone_Positivo_Errore + Protone_Negativo_Errore + Risonanza_Errore;
-cout << "Il numero di ingressi totale è il seguente: " << Somma << " +- " << Errore_Somma <<endl
-<< "In percentuale: " << (Somma*100)/1e7 << "%" <<endl <<endl;
+double sum, sum_error;
+sum = positive_pion + negative_pion + positive_kaon + negative_kaon + positive_proton + negative_proton + resonance;
+sum_error = positive_pion_error + negative_pion_error + positive_kaon_error + negative_kaon_error +
+positive_proton_error + negative_proton_error + resonance_error;
+cout << "Total number of entries is: " << sum << " +- " << sum_error <<endl
+<< "In percentage: " << (sum*100)/1e7 << "%" <<endl <<endl;
 
 double *ptr = new double[2];
 double *ptr2 = new double [3];
 
 //CANVAS A.
-TCanvas *CanvasA = new TCanvas ( "CanvasA", "Distribuzioni di abbondanza particelle, impulso, angolo polare e angolo azimutale",
+TCanvas *CanvasA = new TCanvas ( "CanvasA", "Abundance of particles distributions, impulse, polar angle e azimuthal angle",
 50, 10, 1200, 700);
 CanvasA->Divide(2,2);
 CanvasA->cd(1);
@@ -129,12 +129,12 @@ type->Draw();
 
 CanvasA->cd(2);
 impulse->Draw();
-TF1 * fit_esponenziale = new TF1( "fit_esponenziale", "expo", 0, 4);
-fit_esponenziale->SetParameters(1, 1);
-impulse->Fit(fit_esponenziale, "R");
-fit_esponenziale->GetParameters(&ptr[0]);
-fit_esponenziale->SetParameters(ptr);
-fit_esponenziale->Draw("same");
+TF1 * exponential_fit = new TF1( "exponential_fit", "expo", 0, 4);
+exponential_fit->SetParameters(1, 1);
+impulse->Fit(exponential_fit, "R");
+exponential_fit->GetParameters(&ptr[0]);
+exponential_fit->SetParameters(ptr);
+exponential_fit->Draw("same");
 gStyle->SetOptFit(1111);
 
 CanvasA->cd(3);
@@ -160,27 +160,30 @@ funza->Draw("same");
 gStyle->SetOptFit(1111);
 
 //CANVAS B.
-TCanvas *CanvasB = new TCanvas ( "CanvasB", "Distribuzione di massa invariante: particelle generate da k*, differenza di combinazioni",
+TCanvas *CanvasB = new TCanvas ( "CanvasB", "Invariant mass distribution: particles generated by k*, difference among combinations",
 50, 10, 1200, 700);
 CanvasB->Divide(2,2);
 
 CanvasB->cd(1);
-TH1F *h0 = new TH1F ("h0","Distribuzione Della Massa Invariante Delle Particelle Generate", 5000, 0, 2);
+TH1F *h0 = new TH1F ("h0","Invariant mass distribution of generated particles", 5000, 0, 2);
 TF1 * dunza = new TF1 ("dunza", "gaus", 0, 2);
 inv_mass_res->Fit(dunza, "R");
 inv_mass_res->Draw();
 
 CanvasB->cd(2);
-TH1F *h1 = new TH1F ("h1","Differenza Tra Distribuzione Della Massa Invariante del Pione e del Kaone", 5000, 0, 5);
+TH1F *h1 = new TH1F ("h1","Difference among invariant mass distributions of Pion and Kaon", 5000, 0, 5);
 h1->Add(inv_mass_pkd, inv_mass_pkc,1, -1);
 TF1 * hunza = new TF1 ("hunza", "gaus", 0.4, 0.9);
 h1->Fit(hunza, "R");
 h1->Draw(); 
 
 CanvasB->cd(3);
-TH1F *h2 = new TH1F ("h2","Differenza Tra Distribuzione Della Massa Invariante delle Particelle Generate", 5000, 0, 5);
+TH1F *h2 = new TH1F ("h2","Difference among invariant mass distribution of generated particles", 5000, 0, 5);
 h2->Add(inv_mass_discorde, inv_mass_concorde,1, -1);
 TF1 * lunza = new TF1 ("lunza", "gaus", 0.6, 0.7);
 h2->Fit(lunza, "R");
 h2->Draw();
+
+CanvasA->SaveAs("../img/CanvasA.pdf");
+CanvasB->SaveAs("../img/CanvasB.pdf");
 }

@@ -1,9 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
-#include "Particle.h"
-
-using namespace std;
+#include "../include/Particle.h"
 
 int Particle::fNParticleType = 0;
 
@@ -38,7 +36,7 @@ fPx (Px), fPy (Py), fPz (Pz)
     }
   else
    {
-    cout << "La particella non è presente nella casella numero: " << fParticleType[fIParticle]->GetName() << endl;
+    std::cout << "Particle is not present in the position number: " << fParticleType[fIParticle]->GetName() << std::endl;
     fIParticle = -1;
     }
   }
@@ -52,7 +50,7 @@ fPx (Px), fPy (Py), fPz (Pz)
     }
   else
    {
-    cout <<"La particella non è presente nella casella numero: " << IParticle <<endl;
+    std::cout <<"Particle is not present in the position number: " << IParticle << std::endl;
     }
   fIParticle = -1;
   }
@@ -106,7 +104,7 @@ void Particle::SetParticle (int IParticle)
     }
   else
    {
-    cout << "La particella non esiste: " << IParticle << endl;
+    std::cout << "The particle doesn't exist: " << IParticle << std::endl;
     }
   }
 
@@ -119,7 +117,7 @@ void Particle::SetParticle(const char *Name)
     }
   else
    {
-    cout << "La particella non è presente nella casella numero: " << fParticleType[fIParticle]->GetName() << endl; 
+    std::cout << "Particle is not present in the position number: " << fParticleType[fIParticle]->GetName() << std::endl; 
     }
   }
 
@@ -137,7 +135,7 @@ int Particle::AddParticleType(const char *Name,double Mass,int Charge,double Wid
     int FP = FindParticle(Name);
     if(FP != -1)
      {
-      cout << "Esiste già una particella con questo nome: " << Name << endl; return 7;
+      std::cout << "It already exists a particle with the same name: " << Name << std::endl; return 7;
       }
     if(Width > 0)
      {
@@ -151,7 +149,7 @@ int Particle::AddParticleType(const char *Name,double Mass,int Charge,double Wid
     }
   else
    {
-    cout << "Il contenitore è pieno perchè hai inserito " << fMaxNumParticleType << " particelle" << endl; return 6;
+    std::cout << "Counter is full because you inserted " << fMaxNumParticleType << " particles" << std::endl; return 6;
     }
   return 5;
   }
@@ -172,7 +170,7 @@ int Particle::Decay2body(Particle &dau1,Particle &dau2) const
  {
   if(GetMass() == 0.0)
    {
-    cout << "Se la massa è zero non c'è nessun decadimento." << endl; return 1;
+    std::cout << "If mass is zero there is no decay." << std::endl; return 1;
     }
   double massMot = GetMass();
   double massDau1 = dau1.GetMass();
@@ -195,7 +193,7 @@ int Particle::Decay2body(Particle &dau1,Particle &dau2) const
     }
   if(massMot < massDau1 + massDau2)
    {
-    cout << "Il decadimento non può avvenire perchè la massa è troppo piccola" << endl; return 2;
+    std::cout << "Decay cannot happen because mass is too small" << std::endl; return 2;
     }
   double pout = sqrt((massMot*massMot - (massDau1+massDau2)*(massDau1+massDau2)) *
                      (massMot*massMot - (massDau1-massDau2)*(massDau1-massDau2))
@@ -225,7 +223,7 @@ void Particle::Printer()
 
 void Particle::Printex (int IParticle, const char *Name)
  {
-  cout << "Particle Type: " << fIParticle << endl << "Particle Name: " << fParticleType[fIParticle]->GetName() << endl << "Particle P: " << "(" << fPx << ", "  << fPy << ", " << fPz << ")" << endl;
+  std::cout << "Particle Type: " << fIParticle << std::endl << "Particle Name: " << fParticleType[fIParticle]->GetName() << std::endl << "Particle P: " << "(" << fPx << ", "  << fPy << ", " << fPz << ")" << std::endl;
   };
 
 

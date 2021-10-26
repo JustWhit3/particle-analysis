@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
-#include "ParticleType.h"
-#include "ResonanceType.h"
-#include "Particle.h"
+#include "../include/ParticleType.h"
+#include "../include/ResonanceType.h"
+#include "../include/Particle.h"
 #include "TRandom.h"
 #include "TBenchmark.h"
 #include "TH1F.h"
@@ -10,22 +10,18 @@
 #include "TH1D.h"
 #include "TFile.h"
 
-R__LOAD_LIBRARY(ParticleType.c)
-R__LOAD_LIBRARY(ResonanceType.c)
-R__LOAD_LIBRARY(Particle.c)
-
 using namespace std;
 
 //gBenchmark->Start("Bench");
 
 int Main ()
  { 
-  Particle::AddParticleType ("Pione+", 0.13957, 1, 0);
-  Particle::AddParticleType ("Pione-", 0.13957, -1, 0); 
-  Particle::AddParticleType ("Kaone+", 0.49367, 1, 0);
-  Particle::AddParticleType ("Kaone-", 0.49367, -1, 0);
-  Particle::AddParticleType ("Protone+", 0.93827, 1, 0);
-  Particle::AddParticleType ("Protone-", 0.93827, -1, 0);
+  Particle::AddParticleType ("Pion+", 0.13957, 1, 0);
+  Particle::AddParticleType ("Pion-", 0.13957, -1, 0); 
+  Particle::AddParticleType ("Kaon+", 0.49367, 1, 0);
+  Particle::AddParticleType ("Kaon-", 0.49367, -1, 0);
+  Particle::AddParticleType ("Proton+", 0.93827, 1, 0);
+  Particle::AddParticleType ("Proton-", 0.93827, -1, 0);
   Particle::AddParticleType ("K*", 0.89166, 0, 0.050);
 
   Particle::Printer();
@@ -34,7 +30,7 @@ int Main ()
 
   const Int_t N = 140, a = 1E5, b = 100, part = 7;
 
-  Particle Particella[N];
+  Particle particle[N];
 
   Int_t NK = 0, Over = 100+(2*NK), OverPlus = 100+(2*NK)+1, ArrayPos = 0;
 
@@ -62,7 +58,7 @@ int Main ()
       Px = P*sin(theta)*cos(phi);
       Py = P*sin(theta)*sin(phi);
       Pz = P*cos(theta);
-      Particella[j].SetP(P*sin(theta)*cos(phi), P*sin(theta)*sin(phi), P*cos(theta));
+      particle[j].SetP(P*sin(theta)*cos(phi), P*sin(theta)*sin(phi), P*cos(theta));
       PhiGraph->Fill(phi);
       ThetaGraph->Fill(theta);
       Impulse->Fill(P);
@@ -71,49 +67,49 @@ int Main ()
       
       if (y < 0.4) 
        {
-        Particella[j].SetParticle ("Pione+");
+        particle[j].SetParticle ("Pion+");
         }
       else if (y < 0.8) 
        {
-        Particella[j].SetParticle ("Pione-");
+        particle[j].SetParticle ("Pion-");
         }
       else if (y < 0.85) 
        {
-        Particella[j].SetParticle ("Kaone+");
+        particle[j].SetParticle ("Kaon+");
         }
       else if (y < 0.9) 
        {
-        Particella[j].SetParticle ("Kaone-");
+        particle[j].SetParticle ("Kaon-");
         }
       else if (y < 0.945) 
        {
-        Particella[j].SetParticle ("Protone+");
+        particle[j].SetParticle ("Proton+");
         }
       else if (y < 0.99) 
        {
-        Particella[j].SetParticle ("Protone-");
+        particle[j].SetParticle ("Proton-");
         }
       else
        {
-        Particella[j].SetParticle ("K*");
+        particle[j].SetParticle ("K*");
         if(gRandom->Rndm() < 0.5)
          {
-          Particella[Over].SetParticle("Pione-");
-          Particella[OverPlus].SetParticle("Kaone+");
-          Particella[j].Decay2body(Particella[Over], Particella[OverPlus]);
+          particle[Over].SetParticle("Pion-");
+          particle[OverPlus].SetParticle("Kaon+");
+          particle[j].Decay2body(particle[Over], particle[OverPlus]);
           }
         else
          { 
-          Particella[Over].SetParticle("Pione+");
-          Particella[OverPlus].SetParticle("Kaone-");
-          Particella[j].Decay2body(Particella[Over], Particella[OverPlus]);
+          particle[Over].SetParticle("Pion+");
+          particle[OverPlus].SetParticle("Kaon-");
+          particle[j].Decay2body(particle[Over], particle[OverPlus]);
           }
-        InvMassGen->Fill(Particella[Over].GetInvMass(Particella[OverPlus]));
+        InvMassGen->Fill(particle[Over].GetInvMass(particle[OverPlus]));
         NK++;
         }
 
-      Energy->Fill(Particella[j].GetEnergy());
-      TypeP->Fill(Particella[j].GetIParticle());
+      Energy->Fill(particle[j].GetEnergy());
+      TypeP->Fill(particle[j].GetIParticle());
       }
       
     for (Int_t w = 0; w < Over; w++)
@@ -121,45 +117,45 @@ int Main ()
       for(Int_t u = w + 1; u < OverPlus; u++)
        {
         if (
-            (Particella[w].GetIParticle() != 6) && (Particella[u].GetIParticle() != 6)
+            (particle[w].GetIParticle() != 6) && (particle[u].GetIParticle() != 6)
             ) 
          {
-          InvariantMass->Fill(Particella[w].GetInvMass(Particella[u]));
+          InvariantMass->Fill(particle[w].GetInvMass(particle[u]));
           
           if (
-              Particella[w].GetCharge() != 
-              Particella[u].GetCharge()
+              particle[w].GetCharge() != 
+              particle[u].GetCharge()
               )
            {
-            InvMassDisc->Fill(Particella[w].GetInvMass(Particella[u]));
+            InvMassDisc->Fill(particle[w].GetInvMass(particle[u]));
             }
           if (
-              Particella[w].GetCharge() ==
-              Particella[u].GetCharge()
+              particle[w].GetCharge() ==
+              particle[u].GetCharge()
               )
            {
-            InvMassConc->Fill(Particella[w].GetInvMass(Particella[u]));
+            InvMassConc->Fill(particle[w].GetInvMass(particle[u]));
             }
           if (
-              ((Particella[w].GetIParticle() == 0) && (Particella[u].GetIParticle() == 3)) ||
-              ((Particella[w].GetIParticle() == 1) && (Particella[u].GetIParticle() == 2))
+              ((particle[w].GetIParticle() == 0) && (particle[u].GetIParticle() == 3)) ||
+              ((particle[w].GetIParticle() == 1) && (particle[u].GetIParticle() == 2))
               )
            {
-            InvMassPKDisc->Fill(Particella[w].GetInvMass(Particella[u]));
+            InvMassPKDisc->Fill(particle[w].GetInvMass(particle[u]));
             }
           if (
-              ((Particella[w].GetIParticle() == 0) && (Particella[u].GetIParticle() == 2)) || 
-              ((Particella[w].GetIParticle() == 1) && (Particella[u].GetIParticle() == 3))
+              ((particle[w].GetIParticle() == 0) && (particle[u].GetIParticle() == 2)) || 
+              ((particle[w].GetIParticle() == 1) && (particle[u].GetIParticle() == 3))
               )
            {
-            InvMassPKConc->Fill(Particella[w].GetInvMass(Particella[u]));
+            InvMassPKConc->Fill(particle[w].GetInvMass(particle[u]));
             }
           }
         }
       }  
     }
 
-  TFile * File = new TFile( "Istogrammi.root", "RECREATE" );
+  TFile * File = new TFile( "../histograms.root", "RECREATE" );
   File->cd();
   TypeP->Write();
   PhiGraph->Write();

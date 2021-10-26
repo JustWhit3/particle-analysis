@@ -1,11 +1,9 @@
 #include <iostream>
-#include "ParticleType.h"
-
-using namespace std;
+#include "../include/ParticleType.h"
 
 void ParticleType::Print() 
  {
-  cout << "Particle Name: " << fName << endl << "Particle Mass: " << fMass << endl << "Particle Charge: " << fCharge << endl;
+  std::cout << "Particle Name: " << fName << std::endl << "Particle Mass: " << fMass << std::endl << "Particle Charge: " << fCharge << std::endl;
   };
 
 ParticleType::ParticleType(const char *Name, const double Mass, const int Charge): 
