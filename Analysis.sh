@@ -4,7 +4,7 @@ cd src
 
 root -l <<EOF
 
-gROOT->LoadMacro("Analisi.cpp+")
+gROOT->LoadMacro("Analysis.cpp+")
 Analysis()
 
 EOF
