@@ -1,3 +1,5 @@
+# Particle Analysis
+
 ## Table of contents
 - [Introduction](#introduction)
 - [Description of the repository](#description-of-the-repository)
@@ -11,7 +13,7 @@
 
 ## Introduction
 
-This project simulates a particle events generation and analysis by using only simulations and not real data. Its purpose is of teaching bachelor's degree students in physics how a particle analysis works. I have developed this project in 2016-2017 for the exam "[Laboratorio di Elettromagnetismo e Ottica [Modulo 3]](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/434322)" (when I was a noob in programming ;) ). Since in 2021 I became the tutor of this course, I decided to update a bit the repository for teaching purpose only, therefore, this is the motivation for which the final update is this data. I don't upgrade technical structures like (pointers into vectors etc...) I simply upgrade the whole structure of the project (scripts, compilation etc...).
+This project simulates a particle events generation and analysis by using only simulations and not real data. Its purpose is of teaching bachelor's degree students in physics how a particle analysis works. I have developed this project in 2016-2017 for the exam "[Laboratorio di Elettromagnetismo e Ottica [Modulo 3]](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/434322)" at university of Bologna (when I was a noob in programming ;) ). Since in 2021 I became the tutor of this course, I decided to update a bit the repository for teaching purpose only, therefore, this is the motivation for which the final update is at that data. I didn't upgrade technical objects like pointers into vectors and others, I simply upgrade the whole structure of the project (scripts, compilation etc...).
 
 ## Description of the repository
 
@@ -20,9 +22,9 @@ Excluding this README.md file, the [*License*](https://github.com/JustWhit3/part
 - [**src**](https://github.com/JustWhit3/matrixop/tree/master/src): which contains .cpp files of classes and main / analysis programs:
   * [*ParticleType.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/ParticleType.cpp), [*ResonanceType.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/ResonanceType.cpp), and [*Particle.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Particle.cpp).
   * [*Main.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Main.cpp) for data simulation and [*Analysis.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Analisi.cpp) for data analysis. For data simulation the 3 previously mentioned classes are used.
-- [**doc**](https://github.com/JustWhit3/matrixop/tree/master/doc): which contains documents useful for physical explanations.
+- [**doc**](https://github.com/JustWhit3/particle-analysis/tree/master/doc): which contains documents useful for physical explanations.
 
-It contains also two bash scripts ([*Main.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Main.sh) and [*Analysis.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Analysis.sh)) created to make easier the running of the programs without the needing of entering in [ROOT](https://github.com/root-project/root) framework every time.
+It contains also two bash scripts ([*Main.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Main.sh) and [*Analysis.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Analysis.sh)) created to make easier the running of the programs without the needing of entering [ROOT](https://github.com/root-project/root) framework every time.
 
 ## Run the code
 
@@ -72,7 +74,7 @@ mv particle-analysis-x.y.z particle-analysis
 
 And that's all. You can enter the folder by simply typing:
 ```shell
-cd matrixop
+cd particle-analysis
 ```
 
 ### Compile and run
@@ -86,16 +88,14 @@ chmod +x Analysis.sh
 ```
 The first two commands make the .sh files executables and ./ commands run them. The first script runs the data generation macro, while the second one runs the data analysis macro.
 
-> NOTE:
-> The first command needs a bit of time since the program is doing billions of particles generations.
+> The first command needs a bit of time to end since the program is doing billions of particles generations.
 
-An extra **obj** folder with object files and a .root file (containing the histograms to be analyzed) are now created. The new **obj** folder files with cpp.so termination are used in the *Main.cpp* macro to run the command:
+An extra **obj** folder with object files and a .root file (containing the histograms to be analyzed) are now created. The new **obj** folder files with cpp.so termination are used in the [*Main.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Main.cpp) macro to run the command:
 ```C++
 R__LOAD_LIBRARY(ClassName_cpp.so)
 ```
-in order to load the libraries in the macro itself.
+in order to load the libraries in the macro itself. Once the `./Analysis.sh` is finished a new **img** folder is produced and contains the final analysis plots.
 
-> NOTE:
 > Thanks to this scripts you wouldn't need to enter the ROOT command prompt, since this process is automatically inserted in .sh files.
 
 ## Classes and functions
@@ -115,9 +115,9 @@ The following classes are defined:
     - `const char *fName`: which is the name of the particle.
     - `const double fMass`: which is the mass of the particle.
     - `const int fCharge`: which is the charge of the particle.
-- [ParticleType.cpp](https://github.com/JustWhit3/particle-analysis/blob/master/src/ParticleType.cpp): this script contains the initialization of the `virtual void Print()` method and of the `ParticleType` constructor.
+- [`ParticleType.cpp`](https://github.com/JustWhit3/particle-analysis/blob/master/src/ParticleType.cpp): this script contains the initialization of the `virtual void Print()` method and of the `ParticleType` constructor.
 
-- [ResonanceType.h](https://github.com/JustWhit3/particle-analysis/blob/master/include/ResonanceType.h): this header contains the definition of the `ResonanceType` class and of its methods and members. `ResonanceType` class is heir of the`ParticleType` one and creates particles with characteristics of the mother class plus the resonance width attribute.
+- [`ResonanceType.h`](https://github.com/JustWhit3/particle-analysis/blob/master/include/ResonanceType.h): this header contains the definition of the `ResonanceType` class and of its methods and members. `ResonanceType` class is heir of the`ParticleType` one and creates particles with characteristics of the mother class plus the resonance width attribute.
   * Constructor: 
     - `ResonanceType (const char *Name, const double Mass, const int Charge, const double Width)`.
   * Public methods:
@@ -125,9 +125,9 @@ The following classes are defined:
     - `void Print()`: to print updated informations of a particle.
   * Public members:
     - `const double fWidth`: that is the width of the particle resonance.
-- [ResonanceType.cpp](https://github.com/JustWhit3/particle-analysis/blob/master/src/ResonanceType.cpp): this script contains the initialization of the `void Print()` method and of the `ResonanceType` constructor.
+- [`ResonanceType.cpp`](https://github.com/JustWhit3/particle-analysis/blob/master/src/ResonanceType.cpp): this script contains the initialization of the `void Print()` method and of the `ResonanceType` constructor.
 
-- [Particle.h](https://github.com/JustWhit3/particle-analysis/blob/master/include/Particle.h): this header contains the definition of the `Particle` class and of its methods and members. This class contains all the previous ones and has the purpose of being used for the events generation.
+- [`Particle.h`](https://github.com/JustWhit3/particle-analysis/blob/master/include/Particle.h): this header contains the definition of the `Particle` class and of its methods and members. This class contains all the previous ones and has the purpose of being used for the events generation.
   * Constructors:
     - `Particle()`.
     - `Particle (const char *Name, double Px = 0., double Py = 0., double Pz = 0.)`.
@@ -154,7 +154,7 @@ The following classes are defined:
     - `static int fNParticleType`: number of the pointer positions that are stored by existing particles.
     - `int fIParticle`: ID of the particle.
     - `double fPx, fPy, fPz`: momentum along axis.
-- [Particle.cpp](https://github.com/JustWhit3/particle-analysis/blob/master/src/Particle.cpp): this script contains the initialization of the three constructors and of all the methods of the `Particle` class.
+- [`Particle.cpp`](https://github.com/JustWhit3/particle-analysis/blob/master/src/Particle.cpp): this script contains the initialization of the three constructors and of all the methods of the `Particle` class.
 
 ## Background analysis explanation
 
