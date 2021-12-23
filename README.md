@@ -163,6 +163,6 @@ An explanation of the whole project in terms of physical utility can be found in
 
 Results:
 
-<img src="https://github.com/JustWhit3/particle-analysis/blob/main/img/CanvasA.png">
+<img src="https://github.com/JustWhit3/particle-analysis/blob/master/img/CanvasA.png">
 
-<img src="https://github.com/JustWhit3/particle-analysis/blob/main/img/CanvasB.png">
+<img src="https://github.com/JustWhit3/particle-analysis/blob/master/img/CanvasB.png">
