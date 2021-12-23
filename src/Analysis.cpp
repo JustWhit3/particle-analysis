@@ -185,4 +185,6 @@ h2->Draw();
 
 CanvasA->SaveAs("../img/CanvasA.pdf");
 CanvasB->SaveAs("../img/CanvasB.pdf");
+CanvasA->SaveAs("../img/CanvasA.png");
+CanvasB->SaveAs("../img/CanvasB.png");
 }

@@ -23,6 +23,7 @@ Excluding this README.md file, the [*License*](https://github.com/JustWhit3/part
   * [*ParticleType.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/ParticleType.cpp), [*ResonanceType.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/ResonanceType.cpp), and [*Particle.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Particle.cpp).
   * [*Main.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Main.cpp) for data simulation and [*Analysis.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Analisi.cpp) for data analysis. For data simulation the 3 previously mentioned classes are used.
 - [**doc**](https://github.com/JustWhit3/particle-analysis/tree/master/doc): which contains documents useful for physical explanations.
+- [**img**](https://github.com/JustWhit3/particle-analysis/tree/master/img): which contains final results.
 
 It contains also two bash scripts ([*Main.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Main.sh) and [*Analysis.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Analysis.sh)) created to make easier the running of the programs without the needing of entering [ROOT](https://github.com/root-project/root) framework every time.
 
@@ -159,3 +160,9 @@ The following classes are defined:
 ## Background analysis explanation
 
 An explanation of the whole project in terms of physical utility can be found in [Explanations.pdf](https://github.com/JustWhit3/particle-analysis/blob/master/doc/Explanations.pdf) file, please remember that I wrote this at my second year of bachelor degree without using Latex ;( .
+
+Results:
+
+<img src="https://github.com/JustWhit3/particle-analysis/blob/main/img/CanvasA.png">
+
+<img src="https://github.com/JustWhit3/particle-analysis/blob/main/img/CanvasB.png">

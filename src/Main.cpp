@@ -35,8 +35,8 @@ int Main ()
   Int_t NK = 0, Over = 100+(2*NK), OverPlus = 100+(2*NK)+1, ArrayPos = 0;
 
   TH1F *TypeP = new TH1F ("TypeP", "Generated Particle Type", part, -0.5, -0.5 + part);
-  TH1F *PhiGraph= new TH1F ("PhiGraph", "Distribution of Azimuth angles", 300, 0, 7);
-  TH1F *ThetaGraph = new TH1F ("ThetaGraph", "Distribution of Polar angles", 300, 0, 3.5);
+  TH1F *PhiGraph= new TH1F ("PhiGraph", "Distribution of Azimuth angles", 300, 0, 6);
+  TH1F *ThetaGraph = new TH1F ("ThetaGraph", "Distribution of Polar angles", 300, 0, 3);
   TH1F *Impulse = new TH1F ("Impulse", "Distribution of the Impulse", 200, 0, 10);
   TH1F *CrossImpulse = new TH1F ("CrossImpulse", "Distribution of the Cross Impulse", 200, 0, 10);
   TH1F *Energy = new TH1F ("Energy", "Distribution of Energy", 200, 0, 10);
