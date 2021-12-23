@@ -118,7 +118,6 @@ cout << "Total number of entries is: " << sum << " +- " << sum_error <<endl
 << "In percentage: " << (sum*100)/1e7 << "%" <<endl <<endl;
 
 double *ptr = new double[2];
-double *ptr2 = new double [3];
 
 //CANVAS A.
 TCanvas *CanvasA = new TCanvas ( "CanvasA", "Abundance of particles distributions, impulse, polar angle e azimuthal angle",
