@@ -19,7 +19,7 @@ This project simulates a particle events generation and analysis by using only s
 
 Repository diagram structure:
 ```
-higgs-decay-classification/
+particle-analysis/
 ├── doc/
 │   ├── Explanations.pdf
 ├── img/
