@@ -17,6 +17,33 @@ This project simulates a particle events generation and analysis by using only s
 
 ## Description of the repository
 
+Repository diagram structure:
+```
+particle-analysis/
+├── doc/
+│   ├── Explanations.pdf
+├── img/
+│   ├── CanvasA.pdf
+│   ├── CanvasB.pdf
+│   ├── CanvasA.png
+│   ├── CanvasA.png
+├── include/
+│   ├── Particle.h
+│   ├── ParticleType.h
+│   ├── ResonanceType.h
+├── src/
+│   ├── Particle.cpp
+│   ├── ParticleType.cpp
+│   ├── ResonanceType.cpp
+│   ├── Main.cpp
+│   ├── Analysis.cpp
+│── README.md
+│── License
+│── .gitignore
+│── Analysis.sh
+│── Main.sh
+```
+
 Excluding this README.md file, the [*License*](https://github.com/JustWhit3/particle-analysis/commit/1ca307afd07cc3e42aa440819695136c0cac5b43) file and the [*.gitignore*](https://github.com/JustWhit3/particle-analysis/blob/master/.gitignore) file, the repository contains some directories:
 - [**include**](https://github.com/JustWhit3/particle-analysis/tree/master/include): which contains the classes declaration files [*ParticleType.h*](https://github.com/JustWhit3/particle-analysis/blob/master/include/ParticleType.h), [*ResonanceType.h*](https://github.com/JustWhit3/particle-analysis/blob/master/include/ResonanceType.h) and [*Particle.h*](https://github.com/JustWhit3/particle-analysis/blob/master/include/Particle.h).
 - [**src**](https://github.com/JustWhit3/matrixop/tree/master/src): which contains .cpp files of classes and main / analysis programs:
