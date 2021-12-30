@@ -82,8 +82,6 @@ cd particle-analysis
 
 Now, let's suppose to continue from the previous step. For the compilation part I prepared two scripts [*Main.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Main.sh) and [*Analysis.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Analysis.sh) in order to simplify this procedure. So you have to simply run this two commands one after the other:
 ```shell
-chmod +x Main.sh
-chmod +x Analysis.sh
 ./Main.sh
 ./Analysis.sh
 ```
