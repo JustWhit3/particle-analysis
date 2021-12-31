@@ -14,6 +14,8 @@
 #include "TStyle.h"
 #include "TLegend.h"
 
+using namespace std;
+
 double fi (double *x, double *y)
 {return y[0] + x[0] * y[1];}
 
@@ -78,7 +80,7 @@ TH1D * inv_mass_res = (TH1D *)file->Get("InvMassGen");
 inv_mass_res->GetXaxis()->SetTitle("Invariant Mass of generated Particles [GeV/c^2]");
 inv_mass_res->GetYaxis()->SetTitle("Counts");
 
-cout <<endl;
+cout << endl;
 
 double positive_pion = type->GetBinContent(1);
 double positive_pion_error = type->GetBinError(1);
