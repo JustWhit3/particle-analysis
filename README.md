@@ -20,13 +20,11 @@ This project simulates a particle events generation and analysis by using only s
 Repository diagram structure:
 ```
 particle-analysis/
-├── doc/
-│   ├── Explanations.pdf
 ├── img/
 │   ├── CanvasA.pdf
 │   ├── CanvasB.pdf
 │   ├── CanvasA.png
-│   ├── CanvasA.png
+│   ├── CanvasB.png
 ├── include/
 │   ├── Particle.h
 │   ├── ParticleType.h
@@ -184,9 +182,27 @@ The following classes are defined:
 
 ## Background analysis explanation
 
-An explanation of the whole project in terms of physical utility can be found in [Explanations.pdf](https://github.com/JustWhit3/particle-analysis/blob/master/doc/Explanations.pdf) file, please remember that I wrote this at my second year of bachelor degree without using Latex ;( .
+The three implemented classes have different purposes:
 
-Results:
+- `ParticleType` creates istances that bring with them the three fundamental characteristics of a particle: mass, name and charge.
+- `ResonanceType`, inherit from previous one and creates particles that has characteristics of the mother class and the resonance width (for particles that have one).
+- `Particle`: this class is used for the event generation. 
+
+To generate particles, a `Main.cpp` macro has been written and simulates the event generation. This generated events are analyzed by a `Analysis.cpp` program.
+
+Interested histograms are:
+
+- Particle types.
+- Azimuthal impulse angle distribution.
+- Polar impulse angle distribution.
+- Impulse distribution.
+- Combination of invariant mass distributions.
+
+10^5 events have been generated, each of them of about 100 particles. 80% of generated particles are Pions, 10% are Kaons, 9% protons and the remaining 1% are resonances.
+
+For the cinematic properties, the following distributions are used: a uniform distribution for the azimuthal coordinate (0, 2PI), a uniform distribution for the polar coordinate (0, PI) and an exponential distribution for the impulse. To analyze the resonant signal, the result of the subtraction between only Pions histograms and Kaons with opposite sign and the one of the histogram for only Pions and Kaons with same sign with the resonance histogram have been compared.
+
+Significative resulting histograms are shown below:
 
 <img src="https://github.com/JustWhit3/particle-analysis/blob/master/img/CanvasA.png">
 
