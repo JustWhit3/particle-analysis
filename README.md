@@ -13,6 +13,7 @@
 ## Table of contents
 - [Introduction](#introduction)
 - [Description of the repository](#description-of-the-repository)
+- [Prerequisites](#prerequisites)
 - [Run the code](#run-the-code)
   * [Download](#download)
     * [Download the whole repository](#download-the-whole-repository)
@@ -52,15 +53,9 @@ particle-analysis/
 │── Main.sh
 ```
 
-Excluding this README.md file, the [*License*](https://github.com/JustWhit3/particle-analysis/commit/1ca307afd07cc3e42aa440819695136c0cac5b43) file and the [*.gitignore*](https://github.com/JustWhit3/particle-analysis/blob/master/.gitignore) file, the repository contains some directories:
-- [**include**](https://github.com/JustWhit3/particle-analysis/tree/master/include): which contains the classes declaration files [*ParticleType.h*](https://github.com/JustWhit3/particle-analysis/blob/master/include/ParticleType.h), [*ResonanceType.h*](https://github.com/JustWhit3/particle-analysis/blob/master/include/ResonanceType.h) and [*Particle.h*](https://github.com/JustWhit3/particle-analysis/blob/master/include/Particle.h).
-- [**src**](https://github.com/JustWhit3/matrixop/tree/master/src): which contains .cpp files of classes and main / analysis programs:
-  * [*ParticleType.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/ParticleType.cpp), [*ResonanceType.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/ResonanceType.cpp), and [*Particle.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Particle.cpp).
-  * [*Main.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Main.cpp) for data simulation and [*Analysis.cpp*](https://github.com/JustWhit3/particle-analysis/blob/master/src/Analisi.cpp) for data analysis. For data simulation the 3 previously mentioned classes are used.
-- [**doc**](https://github.com/JustWhit3/particle-analysis/tree/master/doc): which contains documents useful for physical explanations.
-- [**img**](https://github.com/JustWhit3/particle-analysis/tree/master/img): which contains final results.
+## Prerequisites
 
-It contains also two bash scripts ([*Main.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Main.sh) and [*Analysis.sh*](https://github.com/JustWhit3/particle-analysis/blob/master/Analysis.sh)) created to make easier the running of the programs without the needing of entering [ROOT](https://github.com/root-project/root) framework every time.
+- [ROOT framework](https://root.cern/): see [this](https://github.com/JustWhit3/root-framework-installer) for installation.
 
 ## Run the code
 
