@@ -21,6 +21,7 @@
   * [Compile and run](#compile-and-run)
 - [Classes and functions](#classes-and-functions)
 - [List of features](#list-of-features)
+- [Authors](#authors)
 
 ## Introduction
 
@@ -49,6 +50,7 @@ particle-analysis/
 │── README.md
 │── License
 │── .gitignore
+│── .all-contributorsrc
 │── Analysis.sh
 │── Main.sh
 ```
@@ -212,3 +214,8 @@ Significative resulting histograms are shown below:
 <img src="https://github.com/JustWhit3/particle-analysis/blob/master/img/CanvasA.png">
 
 <img src="https://github.com/JustWhit3/particle-analysis/blob/master/img/CanvasB.png">
+
+## Authors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
