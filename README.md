@@ -48,6 +48,7 @@ particle-analysis/
 │   ├── Main.cpp
 │   ├── Analysis.cpp
 │── README.md
+│── CONTRIBUTING.md
 │── License
 │── .gitignore
 │── .all-contributorsrc
