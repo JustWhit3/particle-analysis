@@ -1,3 +1,4 @@
+#!/bin/bash
 
 mkdir -p img
 cd src
